@@ -546,6 +546,9 @@ class generateGraphML
 } //end class
 
 
-$sPathForSourceCodeFiles = dirname(__FILE__ ) . '/../convivium';
+$sPathForSourceCodeFiles = dirname(__FILE__ ) . '/../../../'; // project root
+$graphResults = 'documentation/graphResults'; // saved and created at the root of the project documentation/graphResults
+$sPathForSourceCodeFilesExclude = 'vendor'; // 
 echo "Path For Source Code Files To Read: <b>$sPathForSourceCodeFiles</b><br>";
-$oGraphMLGenerator = new generateGraphML($sPathForSourceCodeFiles, 'documentation/graphResults', 'vendor');
+
+$oGraphMLGenerator = new generateGraphML($sPathForSourceCodeFiles, $graphResults, $sPathForSourceCodeFilesExclude);
