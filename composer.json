@@ -1,6 +1,6 @@
-}
+
 {
-"name": "ramoty/graphml_generator",
+    "name": "ramoty/graphml_generator",
     "type": "library",
     "description": "PHP GraphML Generator Class",
     "keywords": ["documentation", "api", "graphml", "php", "uml"],
