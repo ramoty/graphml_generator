@@ -547,7 +547,7 @@ class generateGraphML
 
 
 $sPathForSourceCodeFiles = dirname(__FILE__ ) . '/../../../'; // project root
-$graphResults = 'documentation/graphResults'; // saved and created at the root of the project documentation/graphResults
+$graphResults = 'docs/graphResults'; // saved and created at the root of the project docs/graphResults
 $sPathForSourceCodeFilesExclude = 'vendor'; // 
 echo "Path For Source Code Files To Read: <b>$sPathForSourceCodeFiles</b><br>";
 
