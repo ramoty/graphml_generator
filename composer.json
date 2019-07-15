@@ -5,15 +5,7 @@
     "description": "PHP GraphML Generator Class",
     "keywords": ["documentation", "api", "graphml", "php", "uml"],
     "homepage": "https://github.com/ramoty/graphml_generator",
-    "license": "LGPL-3.0-only",
-    "authors": [
-        {
-            "name": "Janos Tucsek",
-            "email": "tucsi@tucsi.hu",
-            "homepage": "http://www.tucsi.hu/graphml/",
-            "role": "Developer"
-        }
-    ],
+    "license": "MIT" ,
     "require": {
         "php": ">=5.3.0"
     },
