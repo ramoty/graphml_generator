@@ -1,11 +1,12 @@
 {
     "name": "ramoty/graphml_generator",
     "description": "PHP GraphML Generator Class",
-    "keywords": ["documentation", "api", "graphml", "php", "uml"],  
-    "license": "LGPL-3.0-only",
+    "keywords": ["documentation", "api", "graphml", "php", "uml"],
+    "license": "GNU GPLv3",
+    "version": "1.0",
+    "minimum-stability": "stable",
     "require": {
-        "php": ">=5.3",
-        "ramoty/graphml_generator":"1.*"
-    },
-    "minimum-stability": "stable"
+        "php": ">=5.3"
+    }
+
 }
