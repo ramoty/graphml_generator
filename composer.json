@@ -2,7 +2,7 @@
     "name": "ramoty/graphml_generator",
     "description": "PHP GraphML Generator Class",
     "keywords": ["documentation", "api", "graphml", "php", "uml"],
-    "license": "GNU",
+    "license": "GPL",
     "require": {
         "php": "^5.6"
     }
