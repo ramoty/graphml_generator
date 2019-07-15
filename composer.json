@@ -7,5 +7,5 @@
         "php": ">=5.3",
         "ramoty/graphml_generator":"1.*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "stable"
 }
