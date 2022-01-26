@@ -104,7 +104,7 @@ class generateGraphML
      * @param string $sDirectory  Initial directory, this is the first dir where .php files will be searched
      * @param string $sExcludeDir Don't read directories matching $sExcludeDir
      */
-    public function __construct($sDirectory = '.', $sDirResult = './graphResults', $sExcludeDir = '')
+    public function __construct($sDirectory = '.', $sDirResult = './graphResults', $sExcludeDirs = [''])
     {
         echo "Path for Generated .graphml files: <b>$sDirResult</b> <br>\n";
         $this->sBaseDir = dirname(__FILE__ ) . '/';
@@ -153,7 +153,7 @@ class generateGraphML
         }
 
         /* Search for .php files */
-        $this->walkDir($this->sDirectory, $sExcludeDir);
+        $this->walkDir($this->sDirectory, $sExcludeDirs);
 
         /* Create edges between objects inheritance */
         $this->createEdges();
@@ -198,7 +198,7 @@ class generateGraphML
      * @param string $sDirectory   Search for .php files in $sDirectory
      * @param string $sExcludeDir (optional) Don't read directories matching $sExcludeDir
      */
-    protected function walkDir($sDirectory, $sExcludeDir = '')
+    protected function walkDir($sDirectory, $sExcludeDirs = [''])
     {
         if ($rDh = opendir($sDirectory))
         {
@@ -208,13 +208,13 @@ class generateGraphML
                 if ($sCurrentFile == '.' || $sCurrentFile == '..')
                     continue;
 
-                if ($sCurrentFile == $sExcludeDir)
+                if (in_array($sCurrentFile, $sExcludeDirs))
                     continue;
 
                 if (is_dir($sDirectory . '/' . $sCurrentFile))
                 {
                     /* Current file is a directory, so entering into it */
-                    $this->walkDir($sDirectory . '/' . $sCurrentFile, $sExcludeDir);
+                    $this->walkDir($sDirectory . '/' . $sCurrentFile, $sExcludeDirs);
 
                     /* Search and parse .php files in the given directory */
                     $this->collectFiles($sDirectory . '/' . $sCurrentFile);
@@ -548,7 +548,7 @@ class generateGraphML
 
 $sPathForSourceCodeFiles = dirname(__FILE__ ) . '/../../../'; // project root
 $graphResults = 'docs/graphResults'; // saved and created at the root of the project docs/graphResults
-$sPathForSourceCodeFilesExclude = 'vendor'; // 
+$sPathForSourceCodeFilesExclude = ['vendor']; // exlude directories with any of those names
 echo "Path For Source Code Files To Read: <b>$sPathForSourceCodeFiles</b><br>";
 
 $oGraphMLGenerator = new generateGraphML($sPathForSourceCodeFiles, $graphResults, $sPathForSourceCodeFilesExclude);
